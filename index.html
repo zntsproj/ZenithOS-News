@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Новости ZenithOS</title>
+    <title>ZenithOS News</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
         
@@ -40,68 +40,53 @@
             color: #b28afc;
         }
 
-        .modal {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.8);
-            background: #2e0057;
-            color: #e0c3fc;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-            text-align: center;
+        .news-block {
             display: none;
-            opacity: 0;
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-
-        .modal.show {
-            display: block;
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
-        }
-
-        .modal button {
-            background: #d4aaff;
-            color: #1a002d;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 16px;
-            margin-top: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="news-container">
-        <h1>ZenithOS 2.3 Вышел!</h1>
-        <p>🚀 В этой новой версии ОС вас ожидают изменения:</p>
-        <p>🔒 Добавлена защита от несанкционированного доступа к руту.</p>
-        <p>📸 Добавлена поддержка AVIF.</p>
-        <p>⚡ Добавлено ускорение NEON с помощью ИИ.</p>
-        <p class="news-meta">24.02.2025 -- ne5link</p>
-    </div>
 
-    <div class="modal" id="updateModal">
-        <h2>🎉 ZenithOS 2.3 уже здесь!</h2>
-        <p>Обновитесь, чтобы получить новые возможности и улучшения!</p>
-        <button onclick="closeModal()">ОК</button>
+    <div class="news-container">
+        <div id="news-ru" class="news-block">
+            <h1>Стал известен список устройств, которые будут поддерживать ZenithOS 3.x!</h1>
+            <p>22.03.2025 -- ne5link</p>
+            <p>Официальная прошивка ZenithOS 3.x будет портирована на:</p>
+            <ul style="list-style-type: none; padding: 0;">
+                <li>Samsung Galaxy S3 (GT-I9300)</li>
+                <li>Samsung Galaxy S4 (GT-I9500)</li>
+                <li>Samsung Galaxy Note 2 (GT-N7100)</li>
+                <li>Samsung Galaxy A3</li>
+            </ul>
+            <p>При выпуске первой беты ZenithOS 3.0 появится SDK 11.7, и он будет содержать в себе очень много изменений.</p>
+        </div>
+
+        <div id="news-en" class="news-block">
+            <h1>The list of devices that will support ZenithOS 3.x is now known!</h1>
+            <p>March 22, 2025 -- ne5link</p>
+            <p>The official ZenithOS 3.x firmware will be ported to:</p>
+            <ul style="list-style-type: none; padding: 0;">
+                <li>Samsung Galaxy S3 (GT-I9300)</li>
+                <li>Samsung Galaxy S4 (GT-I9500)</li>
+                <li>Samsung Galaxy Note 2 (GT-N7100)</li>
+                <li>Samsung Galaxy A3</li>
+            </ul>
+            <p>With the release of the first beta of ZenithOS 3.0, SDK 11.7 will also be introduced, featuring a lot of changes.</p>
+        </div>
     </div>
 
     <script>
-        window.onload = function() {
-            setTimeout(() => {
-                document.getElementById('updateModal').classList.add('show');
-            }, 500);
-        };
-
-        function closeModal() {
-            let modal = document.getElementById('updateModal');
-            modal.style.opacity = '0';
-            setTimeout(() => { modal.style.display = 'none'; }, 500);
+        function detectLanguage() {
+            const userLang = navigator.language || navigator.userLanguage;
+            if (userLang.startsWith("ru")) {
+                document.getElementById("news-ru").style.display = "block";
+            } else {
+                document.getElementById("news-en").style.display = "block";
+            }
         }
+
+        window.onload = detectLanguage;
     </script>
+
 </body>
 </html>
