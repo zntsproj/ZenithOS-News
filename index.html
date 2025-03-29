@@ -1,92 +1,82 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!DOCTYPE html><html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ZenithOS News</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-        
-        body {
-            background-color: #1a002d;
-            color: #e0c3fc;
-            font-family: 'Poppins', sans-serif;
-            text-align: center;
-            padding: 20px;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');body {
+        background-color: #1a002d;
+        color: #e0c3fc;
+        font-family: 'Poppins', sans-serif;
+        text-align: center;
+        padding: 20px;
+    }
 
-        .news-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: #2e0057;
-            padding: 20px;
-            border-radius: 12px;
-        }
+    .news-container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: #2e0057;
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
 
-        h1 {
-            font-size: 36px;
-            color: #d4aaff;
-            margin-bottom: 10px;
-        }
+    h1 {
+        font-size: 36px;
+        color: #d4aaff;
+        margin-bottom: 10px;
+    }
 
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-        }
+    p {
+        font-size: 18px;
+        line-height: 1.6;
+    }
 
-        .news-meta {
-            margin-top: 15px;
-            font-size: 14px;
-            color: #b28afc;
-        }
+    .news-meta {
+        margin-top: 15px;
+        font-size: 14px;
+        color: #b28afc;
+    }
 
-        .news-block {
-            display: none;
-        }
-    </style>
+    .news-block {
+        display: none;
+        border-radius: 20px;
+        padding: 20px;
+        background: #3a0077;
+    }
+</style>
+
 </head>
-<body>
-
-    <div class="news-container">
-        <div id="news-ru" class="news-block">
-            <h1>Стал известен список устройств, которые будут поддерживать ZenithOS 3.x!</h1>
-            <p>22.03.2025 -- ne5link</p>
-            <p>Официальная прошивка ZenithOS 3.x будет портирована на:</p>
-            <ul style="list-style-type: none; padding: 0;">
-                <li>Samsung Galaxy S3 (GT-I9300)</li>
-                <li>Samsung Galaxy S4 (GT-I9500)</li>
-                <li>Samsung Galaxy Note 2 (GT-N7100)</li>
-                <li>Samsung Galaxy A3</li>
-            </ul>
-            <p>При выпуске первой беты ZenithOS 3.0 появится SDK 11.7, и он будет содержать в себе очень много изменений.</p>
-        </div>
-
-        <div id="news-en" class="news-block">
-            <h1>The list of devices that will support ZenithOS 3.x is now known!</h1>
-            <p>March 22, 2025 -- ne5link</p>
-            <p>The official ZenithOS 3.x firmware will be ported to:</p>
-            <ul style="list-style-type: none; padding: 0;">
-                <li>Samsung Galaxy S3 (GT-I9300)</li>
-                <li>Samsung Galaxy S4 (GT-I9500)</li>
-                <li>Samsung Galaxy Note 2 (GT-N7100)</li>
-                <li>Samsung Galaxy A3</li>
-            </ul>
-            <p>With the release of the first beta of ZenithOS 3.0, SDK 11.7 will also be introduced, featuring a lot of changes.</p>
-        </div>
+<body><div class="news-container">
+    <div id="news-ru" class="news-block">
+        <h1>ZenithOS 3.x расширяет поддержку современных устройств</h1>
+        <p class="news-meta">29.03.2025 -- ne5link</p>
+        <p>В бета-версии ZenithOS 3.0 команда разработки реализовала поддержку IEEE 802.11ax на уровне ядра, а также добавила множество современных функций. Хотя изначально ZenithOS ориентировалась на старые устройства, теперь она постепенно адаптируется к более новым моделям. В версии 3.0 также появится поддержка 64-битных архитектур.</p>
+        <p><strong>ne5link (главный разработчик ZenithOS):</strong> ZenithOS по-прежнему будет отлично работать на старых устройствах, ведь её основа — лёгкая версия Android 4. Однако теперь она также будет совместима и с современными устройствами.</p>
+        <p>Другие подробности пока не раскрываются.</p>
     </div>
 
-    <script>
-        function detectLanguage() {
-            const userLang = navigator.language || navigator.userLanguage;
-            if (userLang.startsWith("ru")) {
-                document.getElementById("news-ru").style.display = "block";
-            } else {
-                document.getElementById("news-en").style.display = "block";
-            }
-        }
+    <div id="news-en" class="news-block">
+        <h1>ZenithOS 3.x expands support for modern devices</h1>
+        <p class="news-meta">March 29, 2025 -- ne5link</p>
+        <p>In the beta version of ZenithOS 3.0, the development team has implemented IEEE 802.11ax support at the kernel level and introduced numerous modern features. Although ZenithOS was initially designed for older devices, it is now gradually adapting to newer models. Version 3.0 will also include support for 64-bit architectures.</p>
+        <p><strong>ne5link (lead developer of ZenithOS):</strong> ZenithOS will still run smoothly on older devices since it is based on a lightweight version of Android 4. However, it will now also be compatible with modern hardware.</p>
+        <p>Further details remain undisclosed for now.</p>
+    </div>
+</div>
 
-        window.onload = detectLanguage;
-    </script>
+<script>
+    function detectLanguage() {
+        const userLang = navigator.language || navigator.userLanguage;
+        if (userLang.startsWith("ru")) {
+            document.getElementById("news-ru").style.display = "block";
+        } else {
+            document.getElementById("news-en").style.display = "block";
+        }
+    }
+
+    window.onload = detectLanguage;
+</script>
 
 </body>
 </html>
